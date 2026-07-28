@@ -1,0 +1,6 @@
+{
+  "name": "ch27-multi-agent",
+  "type": "module",
+  "private": true,
+  "description": "Multi-agent systems and orchestration examples for Chapter 27"
+}

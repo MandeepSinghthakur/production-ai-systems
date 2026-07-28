@@ -1,0 +1,11 @@
+{
+  "name": "ch24-tool-calling",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 24 - Tool Calling and Tool Security",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}
