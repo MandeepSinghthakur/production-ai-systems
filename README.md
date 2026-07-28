@@ -6,27 +6,6 @@
 
 ## Quickstart
 
-```sh
-tar -xzf production-ai-systems.tar.gz
-cd production-ai-systems
-
-# Verify the examples before anything else. ~90s, needs Node 22.6+.
-node examples/ch18-llm-gateway/scripts/lab.mjs     # expect 13/13
-
-# Then publish. Use `sh setup.sh`, not `./setup.sh` — the executable
-# bit does not survive archiving on every platform.
-sh setup.sh <your-github-username>
-gh repo create production-ai-systems --public --source=. --push
-```
-
-Then **Settings → Pages → Source: GitHub Actions**. Live in about two minutes at
-`https://<your-github-username>.github.io/production-ai-systems`.
-
-The git history is included in the archive — four commits, nothing to
-reinitialize. Do not run `git init`.
-
----
-
 ## What this book is
 
 Most AI books teach you how to call an LLM API. This one teaches you how to build
