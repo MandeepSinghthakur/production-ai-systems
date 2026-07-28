@@ -1,0 +1,26 @@
+{
+  "documents": [
+    {
+      "id": "fin-report-q1",
+      "filename": "quarterly-report.txt",
+      "expectedTitle": "Quarterly Financial Report",
+      "expectedAuthor": "Jane Smith",
+      "expectedSections": ["Executive Summary", "Revenue Breakdown", "Operating Expenses", "Outlook"],
+      "expectedWordCount": 200
+    },
+    {
+      "id": "contract-pdf",
+      "filename": "contract.pdf",
+      "expectedTitle": "Service Agreement",
+      "expectedSections": ["Terms", "Conditions", "Signatures"],
+      "expectedWordCount": 100
+    },
+    {
+      "id": "webpage-html",
+      "filename": "product.html",
+      "expectedTitle": "Product Overview",
+      "expectedSections": ["Features", "Pricing"],
+      "expectedWordCount": 50
+    }
+  ]
+}

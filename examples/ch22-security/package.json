@@ -1,0 +1,11 @@
+{
+  "name": "ch22-security",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 22 - AI Security and Prompt Injection",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ch16-vector-search",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 16 — Vector Databases and Hybrid Search",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

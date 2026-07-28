@@ -1,0 +1,11 @@
+{
+  "name": "ch06-kafka",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 6 - Kafka Internals for LLM Workloads",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

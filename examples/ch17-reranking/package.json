@@ -1,0 +1,11 @@
+{
+  "name": "ch17-reranking",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 17 — Re-ranking and Retrieval Evaluation",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

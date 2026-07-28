@@ -1,0 +1,11 @@
+{
+  "name": "ch21-evaluation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 21 - Evaluation Pipelines",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ch04-redis",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 4 - Caching: Redis Deep Dive",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

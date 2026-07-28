@@ -1,0 +1,11 @@
+{
+  "name": "ch14-document-ingestion",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 14 - Document Ingestion and OCR",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}
