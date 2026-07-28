@@ -1,0 +1,49 @@
+site_name: Building Production AI Systems
+site_description: Distributed Systems, Agentic AI, and LLM Infrastructure at Scale
+repo_url: https://github.com/MandeepSinghthakur/production-ai-systems
+edit_uri: edit/main/
+docs_dir: book
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - search.highlight
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle: { icon: material/weather-sunny, name: Light mode }
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc: { permalink: true }
+  - pymdownx.details
+  - pymdownx.highlight: { anchor_linenums: true }
+  - pymdownx.inlinehilite
+  - pymdownx.snippets: { base_path: ["."] }
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+
+# Nav lists only what exists. Add a line when a chapter lands; the
+# canonical status table is OUTLINE.md.
+nav:
+  - Home: index.md
+  - Part V - The AI Platform:
+      - 18. The LLM Gateway: ch18-llm-gateway.md
+      - 19. Multi-Provider Routing and Failover: ch19-multi-provider-routing.md

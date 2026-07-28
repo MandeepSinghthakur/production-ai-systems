@@ -1,0 +1,17 @@
+{
+  "name": "ch18-llm-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 18 — The LLM Gateway",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "provider": "node src/mock-provider/server.ts",
+    "gateway": "node src/gateway.ts",
+    "start": "node scripts/start-all.mjs",
+    "load": "node src/load.ts",
+    "ledger:report": "node scripts/ledger-report.mjs",
+    "fault": "node scripts/fault.mjs",
+    "lab": "node scripts/lab.mjs"
+  }
+}
