@@ -1,0 +1,11 @@
+{
+  "name": "ch15-document-search",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 15 — Chunking Strategies",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

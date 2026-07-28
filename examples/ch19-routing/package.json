@@ -1,0 +1,14 @@
+{
+  "name": "ch19-routing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 19 - Multi-Provider Routing",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "provider-a": "node src/mock-provider-a/server.ts",
+    "provider-b": "node src/mock-provider-b/server.ts",
+    "router": "node src/router.ts",
+    "lab": "node scripts/lab.mjs"
+  }
+}

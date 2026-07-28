@@ -1,0 +1,11 @@
+{
+  "name": "ch23-cost-control",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 23 - Cost Control and Capacity Planning",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

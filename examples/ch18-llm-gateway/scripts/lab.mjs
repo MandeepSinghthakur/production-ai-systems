@@ -1,19 +1,44 @@
 // Reproduces every numbered step of the Chapter 18 lab and checks the
 // claims the chapter makes. If this script fails, the chapter is wrong.
 //
-//   node scripts/lab.mjs
+//   node scripts/lab.mjs                              (from example dir)
+//   node examples/ch18-llm-gateway/scripts/lab.mjs   (from repo root)
 //
 // Starts the mock provider and gateway itself; nothing else required.
 
 import { spawn } from 'node:child_process';
 import { setTimeout as sleep } from 'node:timers/promises';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 
 const GW = 'http://localhost:8080';
 const PROV = 'http://localhost:8081';
 
+// Resolve paths against import.meta.url so lab runs from repo root AND from example dir
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const exampleDir = join(__dirname, '..');
+
 const children = [];
 function start(script) {
-  const c = spawn('node', [script], { stdio: 'ignore' });
+  const fullPath = join(exampleDir, script);
+  const c = spawn('node', [fullPath], {
+    stdio: ['ignore', 'pipe', 'pipe'],
+    cwd: exampleDir,
+  });
+
+  // Capture stderr and print on error (per CLAUDE.md: never stdio: 'ignore')
+  let stderrBuf = '';
+  c.stderr.on('data', (d) => {
+    stderrBuf += d.toString();
+  });
+  c.on('exit', (code) => {
+    if (code !== 0 && code !== null && stderrBuf) {
+      console.error(`[${script}] exited with code ${code}:`);
+      console.error(stderrBuf);
+    }
+  });
+
   children.push(c);
   return c;
 }
@@ -37,7 +62,11 @@ const get = async (url) => (await fetch(url)).json();
 
 function load(args) {
   return new Promise((resolve) => {
-    const c = spawn('node', ['src/load.ts', ...args], { stdio: 'ignore' });
+    const loadPath = join(exampleDir, 'src/load.ts');
+    const c = spawn('node', [loadPath, ...args], {
+      stdio: ['ignore', 'pipe', 'pipe'],
+      cwd: exampleDir,
+    });
     c.on('exit', resolve);
   });
 }
