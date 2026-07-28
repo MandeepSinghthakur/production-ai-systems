@@ -1,0 +1,17 @@
+{
+  "name": "ch30-coding-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Chapter 30: Design - A Coding Agent",
+  "main": "scripts/lab.mjs",
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  },
+  "keywords": [
+    "coding-agent",
+    "sandbox",
+    "code-generation",
+    "ai-systems"
+  ],
+  "license": "MIT"
+}

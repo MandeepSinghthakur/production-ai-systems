@@ -1,0 +1,6 @@
+{
+  "name": "ch29-regulated-ai",
+  "type": "module",
+  "private": true,
+  "description": "AI in regulated domains: audit trails, approval workflows, and compliance"
+}

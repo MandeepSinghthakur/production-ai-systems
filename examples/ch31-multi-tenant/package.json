@@ -1,0 +1,11 @@
+{
+  "name": "ch31-multi-tenant",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 31 - Design: A Multi-Tenant Agent Platform",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

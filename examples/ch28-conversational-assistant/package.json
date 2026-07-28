@@ -1,0 +1,11 @@
+{
+  "name": "ch28-conversational-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 28 - Design: A Conversational Assistant at Scale",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}
