@@ -1,0 +1,11 @@
+{
+  "name": "ch09-observability",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 9 - Observability and OpenTelemetry",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

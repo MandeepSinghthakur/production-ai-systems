@@ -1,0 +1,11 @@
+{
+  "name": "ch07-event-driven",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 7 - Event-Driven Architecture Patterns",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

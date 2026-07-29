@@ -1,0 +1,11 @@
+{
+  "name": "ch10-transformers",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 10 - How Transformers Actually Serve Requests",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

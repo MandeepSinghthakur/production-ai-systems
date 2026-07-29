@@ -1,0 +1,11 @@
+{
+  "name": "ch08-outbox-saga",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 8 - Outbox, Saga, and Exactly-Once",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

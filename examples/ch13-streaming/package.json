@@ -1,0 +1,11 @@
+{
+  "name": "ch13-streaming",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 13 — Streaming and Token Economics",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

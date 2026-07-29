@@ -1,0 +1,12 @@
+{
+  "name": "ch32-architecture-rfcs",
+  "version": "1.0.0",
+  "description": "Chapter 32: Architecture Reviews and RFCs",
+  "type": "module",
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

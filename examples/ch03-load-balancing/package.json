@@ -1,0 +1,11 @@
+{
+  "name": "ch03-load-balancing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable companion to Chapter 3 - Load Balancing Long-Lived Connections",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "ch33-incident-management",
+  "version": "1.0.0",
+  "description": "Chapter 33: Incident Management for AI Systems",
+  "type": "module",
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

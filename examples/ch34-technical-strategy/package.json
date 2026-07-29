@@ -1,0 +1,12 @@
+{
+  "name": "ch34-technical-strategy",
+  "version": "1.0.0",
+  "description": "Chapter 34: Technical Strategy and Influence",
+  "type": "module",
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

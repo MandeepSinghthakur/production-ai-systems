@@ -1,0 +1,12 @@
+{
+  "name": "ch12-embeddings",
+  "version": "1.0.0",
+  "description": "Chapter 12: Embeddings",
+  "type": "module",
+  "scripts": {
+    "lab": "node scripts/lab.mjs"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
