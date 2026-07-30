@@ -22,7 +22,7 @@ const exampleDir = join(__dirname, '..');
 const children = [];
 function start(script) {
   const fullPath = join(exampleDir, script);
-  const c = spawn('node', [fullPath], {
+  const c = spawn('node', ['--experimental-strip-types', fullPath], {
     stdio: ['ignore', 'pipe', 'pipe'],
     cwd: exampleDir,
   });
@@ -63,7 +63,7 @@ const get = async (url) => (await fetch(url)).json();
 function load(args) {
   return new Promise((resolve) => {
     const loadPath = join(exampleDir, 'src/load.ts');
-    const c = spawn('node', [loadPath, ...args], {
+    const c = spawn('node', ['--experimental-strip-types', loadPath, ...args], {
       stdio: ['ignore', 'pipe', 'pipe'],
       cwd: exampleDir,
     });

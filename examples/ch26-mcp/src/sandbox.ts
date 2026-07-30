@@ -67,12 +67,13 @@ export class ToolSandbox {
     } catch (err) {
       const endTime = Date.now();
       const executionMs = endTime - startTime;
-      const isTimeout = executionMs >= ctx.maxExecutionMs;
+      const errorMessage = err instanceof Error ? err.message : String(err);
+      const isTimeout = errorMessage.includes('Execution timeout');
 
       return {
         success: false,
         output: null,
-        error: err instanceof Error ? err.message : String(err),
+        error: errorMessage,
         executionMs,
         memoryUsedMb: 0,
         terminated: isTimeout,

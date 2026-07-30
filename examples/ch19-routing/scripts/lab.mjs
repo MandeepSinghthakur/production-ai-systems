@@ -25,7 +25,7 @@ const children = [];
 // NOTE: ch18 uses stdio: 'ignore' which violates CLAUDE.md rules. Fixed here.
 function start(script) {
   const fullPath = join(exampleDir, script);
-  const c = spawn('node', [fullPath], {
+  const c = spawn('node', ['--experimental-strip-types', fullPath], {
     stdio: ['ignore', 'pipe', 'pipe'],
     cwd: exampleDir,
   });
