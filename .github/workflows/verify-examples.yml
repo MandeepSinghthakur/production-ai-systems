@@ -66,11 +66,11 @@ jobs:
           node-version: '22.6'
 
       - name: Verify ${{ matrix.chapter.id }} (from repo root)
-        run: node examples/${{ matrix.chapter.id }}/scripts/lab.mjs
+        run: node --experimental-strip-types examples/${{ matrix.chapter.id }}/scripts/lab.mjs
 
       - name: Verify ${{ matrix.chapter.id }} (from example dir)
         working-directory: examples/${{ matrix.chapter.id }}
-        run: node scripts/lab.mjs
+        run: node --experimental-strip-types scripts/lab.mjs
 
   summary:
     needs: verify
