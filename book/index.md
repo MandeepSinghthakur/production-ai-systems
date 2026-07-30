@@ -1,28 +1,52 @@
 # Building Production AI Systems
 
-**Distributed Systems, Agentic AI, and LLM Infrastructure at Scale**
+A technical book on designing, building, and operating production AI systems.
 
-Most AI books teach you how to call a model API. This one teaches you
-how to build the platform behind it: the gateway, the retrieval layer,
-the agent runtime, the evaluation harness, and the operational
-discipline that keeps all of it alive at 3 a.m.
+## About This Book
 
-It assumes you know how to write software. It does not assume you have
-ever run an LLM system in production.
+This book teaches software engineers how to build production AI systems. Not demos. Not notebooks. Systems that serve real users, handle real money, and break at 3 AM.
 
-## Status
+**34 chapters** organized into eight parts:
 
-This book is written in the open, one chapter at a time. Chapters
-appear here as they pass review. See
-[OUTLINE.md](https://github.com/MandeepSinghthakur/production-ai-systems/blob/main/OUTLINE.md)
-for the full table of contents and per-chapter status.
+1. **Distributed Systems Foundations** - What changes when a single request takes 40 seconds
+2. **Data and Event Infrastructure** - Kafka, outbox patterns, observability
+3. **LLM Fundamentals** - Transformers, tokenization, embeddings, streaming
+4. **Retrieval** - Document ingestion, chunking, vector search, re-ranking
+5. **The AI Platform** - Gateways, routing, memory, evaluation, security, cost control
+6. **Agentic AI** - Tool calling, planning, MCP, multi-agent systems
+7. **System Design** - Complete design walkthroughs with capacity estimates
+8. **Staff Engineering** - Architecture reviews, incident management, technical strategy
 
-Every numeric claim in a chapter is asserted by a script in
-`examples/`, and CI runs those scripts on every commit. If a chapter
-says amplification reaches 2x under a retry storm, there is a test that
-fails when it does not.
+## What Makes This Book Different
 
-## Start here
+**Every claim is tested.** When this book says that retry storms amplify load by 2x, there is runnable code that demonstrates it. The examples are assertions, not illustrations. If the numbers in prose do not match the numbers in code, the build fails.
 
-- [Chapter 18 - The LLM Gateway](ch18-llm-gateway.md)
-- [Chapter 19 - Multi-Provider Routing and Failover](ch19-multi-provider-routing.md)
+**Interview preparation is integrated.** Each chapter ends with interview questions and staff-level answers. By the time you finish a chapter, you can answer questions about its topic.
+
+**Organized by what breaks.** Traditional books organize by technology. This book organizes by failure mode: what happens when your retrieval pipeline returns garbage, when your provider has an outage, when your costs exceed your budget.
+
+## Running the Examples
+
+Every chapter has runnable code. No API keys required. No Docker. Just Node.js 22.6+.
+
+```bash
+# Clone the repository
+git clone https://github.com/MandeepSinghthakur/production-ai-systems
+cd production-ai-systems
+
+# Run any chapter's lab
+node examples/ch18-llm-gateway/scripts/lab.mjs
+```
+
+Each lab prints assertions as it runs. The examples are the source of truth.
+
+## Getting Started
+
+- [Preface](preface.md) - Who this book is for
+- [How to Read This Book](how-to-read.md) - Three reading paths
+- [Chapter 1](ch01-distributed-systems.md) - Start reading
+
+## Links
+
+- [GitHub Repository](https://github.com/MandeepSinghthakur/production-ai-systems)
+- [Report Issues](https://github.com/MandeepSinghthakur/production-ai-systems/issues)

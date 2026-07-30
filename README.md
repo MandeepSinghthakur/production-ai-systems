@@ -4,9 +4,6 @@
 
 ---
 
-## Quickstart
-
-
 ## What this book is
 
 Most AI books teach you how to call an LLM API. This one teaches you how to build
@@ -102,8 +99,8 @@ publishing toolchain is a very satisfying way to avoid writing a book.
 | --- | --- |
 | Outline | Locked (34 chapters, 8 parts) |
 | Style guide | Locked |
-| Chapters drafted | 2 of 34 |
-| Examples runnable | 1 of 34 (ch18, verified in CI) |
+| Chapters drafted | 34 of 34 |
+| Examples runnable | 34 of 34 (1,026 assertions, verified in CI) |
 | Diagrams | Inline Mermaid only |
 | Website | Not started |
 
