@@ -1,0 +1,103 @@
+name: Verify Examples
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        chapter:
+          # Part I - Distributed Systems Foundations (Ch 1-5)
+          - { id: "ch01-distributed-systems", assertions: 40 }
+          - { id: "ch02-scaling-apis", assertions: 35 }
+          - { id: "ch03-load-balancing", assertions: 34 }
+          - { id: "ch04-redis", assertions: 21 }
+          - { id: "ch05-postgres", assertions: 29 }
+          # Part II - Data and Event Infrastructure (Ch 6-9)
+          - { id: "ch06-kafka", assertions: 16 }
+          - { id: "ch07-event-driven", assertions: 42 }
+          - { id: "ch08-outbox-saga", assertions: 43 }
+          - { id: "ch09-observability", assertions: 55 }
+          # Part III - LLM Fundamentals (Ch 10-13)
+          - { id: "ch10-transformers", assertions: 38 }
+          - { id: "ch11-tokenization", assertions: 41 }
+          - { id: "ch12-embeddings", assertions: 40 }
+          - { id: "ch13-streaming", assertions: 37 }
+          # Part IV - Retrieval (Ch 14-17)
+          - { id: "ch14-document-ingestion", assertions: 43 }
+          - { id: "ch15-document-search", assertions: 28 }
+          - { id: "ch16-vector-search", assertions: 24 }
+          - { id: "ch17-reranking", assertions: 19 }
+          # Part V - AI Platform (Ch 18-23)
+          - { id: "ch18-llm-gateway", assertions: 13 }
+          - { id: "ch19-routing", assertions: 13 }
+          - { id: "ch20-memory", assertions: 16 }
+          - { id: "ch21-evaluation", assertions: 23 }
+          - { id: "ch22-security", assertions: 30 }
+          - { id: "ch23-cost-control", assertions: 13 }
+          # Part VI - Agentic AI (Ch 24-27)
+          - { id: "ch24-tool-calling", assertions: 17 }
+          - { id: "ch25-planning", assertions: 43 }
+          - { id: "ch26-mcp", assertions: 35 }
+          - { id: "ch27-multi-agent", assertions: 16 }
+          # Part VII - System Design (Ch 28-31)
+          - { id: "ch28-conversational-assistant", assertions: 24 }
+          - { id: "ch29-regulated-ai", assertions: 42 }
+          - { id: "ch30-coding-agent", assertions: 49 }
+          - { id: "ch31-multi-tenant", assertions: 28 }
+          # Part VIII - Staff Engineering (Ch 32-34)
+          - { id: "ch32-architecture-rfcs", assertions: 28 }
+          - { id: "ch33-incident-management", assertions: 26 }
+          - { id: "ch34-technical-strategy", assertions: 25 }
+
+    name: ${{ matrix.chapter.id }} (${{ matrix.chapter.assertions }} assertions)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.6'
+
+      - name: Verify ${{ matrix.chapter.id }} (from repo root)
+        run: node examples/${{ matrix.chapter.id }}/scripts/lab.mjs
+
+      - name: Verify ${{ matrix.chapter.id }} (from example dir)
+        working-directory: examples/${{ matrix.chapter.id }}
+        run: node scripts/lab.mjs
+
+  summary:
+    needs: verify
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Report Results
+        run: |
+          echo "## Verification Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Total chapters: 34" >> $GITHUB_STEP_SUMMARY
+          echo "Total assertions: 1,026" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Part | Chapters | Focus |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|----------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| I | 1-5 | Distributed Systems Foundations |" >> $GITHUB_STEP_SUMMARY
+          echo "| II | 6-9 | Data and Event Infrastructure |" >> $GITHUB_STEP_SUMMARY
+          echo "| III | 10-13 | LLM Fundamentals |" >> $GITHUB_STEP_SUMMARY
+          echo "| IV | 14-17 | Retrieval |" >> $GITHUB_STEP_SUMMARY
+          echo "| V | 18-23 | AI Platform |" >> $GITHUB_STEP_SUMMARY
+          echo "| VI | 24-27 | Agentic AI |" >> $GITHUB_STEP_SUMMARY
+          echo "| VII | 28-31 | System Design |" >> $GITHUB_STEP_SUMMARY
+          echo "| VIII | 32-34 | Staff Engineering |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ needs.verify.result }}" == "success" ]; then
+            echo "**Result: All chapters passed**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Result: Some chapters failed - check individual job logs**" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi

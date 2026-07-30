@@ -313,8 +313,8 @@ overage.
 
 **Prevention.** Reserve-then-reconcile with pessimistic input. The overshoot
 bound becomes: concurrency * (max_input + max_output) * price. At 100
-concurrent requests and 16,000 tokens per request at $0.01/1K tokens, that is
-$16. Document this bound and decide whether it is acceptable; if not, reduce
+concurrent requests and 16,000 tokens per request, that overshoot is bounded
+to a predictable dollar amount you can compute from your pricing. Document this bound and decide whether it is acceptable; if not, reduce
 per-tenant concurrency limits.
 
 ### Failure: forecast misses traffic spike

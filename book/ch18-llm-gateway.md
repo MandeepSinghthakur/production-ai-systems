@@ -24,7 +24,7 @@ By the end of this chapter you will be able to:
 
 ## The Production Story
 
-A retail bank had four teams shipping LLM features at the same time: a support
+Consider a retail bank running four LLM features at the same time: a support
 assistant, a document summarizer, an internal search tool, and a fraud-review
 copilot. Each team held its own provider API key, called the provider SDK
 directly from its own service, and expensed the bill to its own cost center.
